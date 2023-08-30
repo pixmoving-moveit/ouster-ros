@@ -49,8 +49,8 @@ class OusterStaticTransformsBroadcaster {
 
     void broadcast_transforms(const sensor::sensor_info& info) {
         auto now = node->get_clock()->now();
-        tf_bcast.sendTransform(ouster_ros::transform_to_tf_msg(
-            info.lidar_to_sensor_transform, sensor_frame, lidar_frame, now));
+        // tf_bcast.sendTransform(ouster_ros::transform_to_tf_msg(
+        //     info.lidar_to_sensor_transform, sensor_frame, lidar_frame, now));
         tf_bcast.sendTransform(ouster_ros::transform_to_tf_msg(
             info.imu_to_sensor_transform, sensor_frame, imu_frame, now));
     }
